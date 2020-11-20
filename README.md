@@ -3,7 +3,11 @@
 
 # Disclaimer
 
-*I don't know what the fuck I'm doing.*
+*I'm not an audio guru. This is mostly just a concept/test program. It may crash. It may not be 100% accurate at detecting loud audios. Create an issue to report a bug.*
+
+# What it does
+
+This downloads an audio from Roblox, processes it using ffmpeg, then parses the overall decibel level from the output & returns it to the client.
 
 # Usage & Installation 
 
