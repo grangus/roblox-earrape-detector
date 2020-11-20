@@ -11,6 +11,10 @@ const app = express();
 
 app.use(helmet());
 
+if(!fs.existsSync("./temp")) {
+  fs.mkdirSync("./temp");
+}
+
 app.get("/audio/level/:id", async (req, result) => {
   if (isNaN(req.params.id))
     return result.status(400).json({ error: "Invalid ID!" });
