@@ -61,14 +61,16 @@ app.get("/audio/level/:id", async (req, result) => {
                   .json({ error: "Failed to process audio!" });
 
               //i have no idea why ffmpeg writes to stderr but whatever
-              let lvl = stderr
+              let overAllLvl = stderr
                 .split("\n")
                 .find((s) => s.includes("mean_volume"))
                 .split("mean_volume: ")[1];
-
+              let overAllDb = parseInt(overAllLvl.replace(" dB", ""));
+              
               result.status(200).json({
                 processingTime: ms(Date.now() - start),
-                audioLevel: lvl,
+                audioLevel: overAllLvl,
+                isEarRape: overAllDb > -10 ? true : false,
               });
 
               fs.unlinkSync(`./temp/${fileName}.mp3`);
