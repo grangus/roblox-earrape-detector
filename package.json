@@ -1,0 +1,20 @@
+{
+  "name": "roblox-earrape-detector",
+  "version": "1.0.0",
+  "description": "Detect loud audio to prevent getting ear raped.",
+  "main": "app.js",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "helmet": "^4.2.0",
+    "ms": "^2.1.2",
+    "request": "^2.88.2",
+    "uuid": "^8.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "grangus",
+  "license": "ISC"
+}
